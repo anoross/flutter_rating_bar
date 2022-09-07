@@ -468,7 +468,7 @@ class _HalfClipper extends CustomClipper<Rect> {
 }
 
 class _NoRatingWidget extends StatelessWidget {
-  const _NoRatingWidget({
+  _NoRatingWidget({
     required this.size,
     required this.child,
     required this.enableMask,
@@ -486,15 +486,8 @@ class _NoRatingWidget extends StatelessWidget {
       height: size,
       width: size,
       child: FittedBox(
-        child: enableMask
-            ? ColorFiltered(
-                colorFilter: ColorFilter.mode(
-                  unratedColor,
-                  BlendMode.srcIn,
-                ),
-                child: child,
-              )
-            : child,
+        fit: BoxFit.contain,
+        child: child,
       ),
     );
   }
